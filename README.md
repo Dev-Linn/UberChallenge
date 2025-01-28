@@ -1,23 +1,34 @@
-# Email Microservice  
-## Uber Backend Challenge
+Claro! Vamos adicionar mais detalhes para deixar o projeto mais completo e interessante. Aqui está uma versão mais elaborada do seu README:
+
+---
+
+# Microserviço de E-mail  
+## Desafio Backend da Uber
 
 ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)  
 ![Spring](https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white)  
-[![Licence](https://img.shields.io/github/license/Ileriayo/markdown-badges?style=for-the-badge)](./LICENSE)
 
-Este projeto é uma API construída com **Java, Java Spring e AWS Simple Email Service**. 🚀
+Este repositório contém uma API robusta construída com **Java, Spring Boot** e **AWS Simple Email Service (SES)**. 🚀
 
-O Microserviço foi desenvolvido para demonstrar como resolver o [Uber Backend Challenge](https://github.com/uber-archive/coding-challenge-tools/blob/master/coding_challenge.md).
+O microserviço foi desenvolvido para resolver o [Desafio Backend da Uber](https://github.com/uber-archive/coding-challenge-tools/blob/master/coding_challenge.md), que tem como objetivo testar habilidades em design de sistemas e na implementação de soluções escaláveis.
 
-## Table of Contents
+## Sumário
 
-- [Installation](#installation) 🛠️
-- [Configuration](#configuration) ⚙️
-- [Usage](#usage) 📚
-- [API Endpoints](#api-endpoints) 🌐
-- [Database](#database) 🗄️
+- [Introdução](#introdução) 📌
+- [Instalação](#instalação) 🛠️
+- [Configuração](#configuração) ⚙️
+- [Uso](#uso) 📚
+- [Endpoints da API](#endpoints-da-api) 🌐
+- [Banco de Dados](#banco-de-dados) 🗄️
+- [Testes](#testes) 🧪
+- [Contribuição](#contribuição) 🤝
+- [Licença](#licença) 📜
 
-## Installation 🛠️
+## Introdução 📌
+
+Este microserviço permite o envio de e-mails através da AWS SES, utilizando uma arquitetura baseada em microserviços para fornecer escalabilidade, facilidade de manutenção e integração com outras partes de um sistema de backend.
+
+## Instalação 🛠️
 
 1. Clone o repositório:
 
@@ -25,9 +36,19 @@ O Microserviço foi desenvolvido para demonstrar como resolver o [Uber Backend C
 git clone https://github.com/Dev-Linn/UberChallenge.git
 ```
 
-2. Instale as dependências com o Maven
+2. Navegue até o diretório do projeto:
 
-3. Crie o arquivo `application.properties` na raiz do projeto com suas credenciais da AWS:
+```bash
+cd UberChallenge
+```
+
+3. Instale as dependências com o Maven:
+
+```bash
+mvn install
+```
+
+4. Crie um arquivo `application.properties` na raiz do projeto com suas credenciais da AWS:
 
 ```properties
 aws.region=us-east-1
@@ -35,18 +56,30 @@ aws.accessKeyId=1111111
 aws.secretKey=111111
 ```
 
-## Usage 📚
+## Configuração ⚙️
 
-1. Inicie a aplicação com o Maven
-2. A API estará disponível em http://localhost:8080
+A configuração do serviço depende do **AWS SES**, que exige configurações específicas para validar sua conta e endereço de e-mail. Siga as etapas para configurar a AWS SES:
 
-## API Endpoints 🌐  
-A API fornece os seguintes endpoints:
+1. Crie uma conta AWS e habilite o SES.
+2. Verifique o endereço de e-mail que deseja usar como remetente.
+3. Configure as credenciais de acesso (Access Key ID e Secret Key) na AWS e insira no arquivo `application.properties`.
 
-**POST EMAIL**  
-```markdown
-POST /api/email/send - Envia um e-mail do seu remetente para o destino
+## Uso 📚
+
+Após configurar o ambiente, inicie a aplicação com o Maven:
+
+```bash
+mvn spring-boot:run
 ```
+
+A API estará disponível em `http://localhost:8080`.
+
+## Endpoints da API 🌐  
+
+### Enviar E-mail
+
+**POST /api/email/send**  
+Envia um e-mail do remetente para o destinatário.
 
 **BODY**  
 ```json
@@ -56,3 +89,24 @@ POST /api/email/send - Envia um e-mail do seu remetente para o destino
   "body": "Corpo do E-mail"
 }
 ```
+
+**Exemplo de resposta**:
+```json
+{
+  "status": "success",
+  "message": "Email enviado com sucesso!"
+}
+```
+
+## Banco de Dados 🗄️
+
+Para este projeto, não foi utilizado banco de dados, já que a aplicação é focada em enviar e-mails. No entanto, você pode integrar um banco de dados para armazenar os e-mails enviados, histórico de logs, etc. Isso pode ser feito com um simples banco de dados relacional (como MySQL ou PostgreSQL) ou até mesmo com uma solução NoSQL.
+
+
+## Contribuição 🤝
+
+1. Faça o **fork** deste repositório.
+2. Crie uma **branch** para a sua feature (`git checkout -b feature/nova-feature`).
+3. Faça o **commit** das suas alterações (`git commit -m 'Adicionando nova feature'`).
+4. **Push** para a branch (`git push origin feature/nova-feature`).
+5. Crie um **pull request**.
