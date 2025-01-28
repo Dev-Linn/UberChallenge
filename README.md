@@ -18,7 +18,6 @@ O microserviço foi desenvolvido para resolver o [Desafio Backend da Uber](https
 - [Banco de Dados](#banco-de-dados) 🗄️
 - [Testes](#testes) 🧪
 - [Contribuição](#contribuição) 🤝
-- [Licença](#licença) 📜
 
 ## Introdução 📌
 
