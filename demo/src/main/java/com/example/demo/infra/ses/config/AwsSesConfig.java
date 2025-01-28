@@ -11,6 +11,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class AwsSesConfig {
 
+    //awsconfig
     @Value("${aws.accessKeyId}")
     private String accessKeyId;
 
