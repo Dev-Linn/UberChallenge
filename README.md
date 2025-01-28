@@ -1,7 +1,3 @@
-Claro! Vamos adicionar mais detalhes para deixar o projeto mais completo e interessante. Aqui está uma versão mais elaborada do seu README:
-
----
-
 # Microserviço de E-mail  
 ## Desafio Backend da Uber
 
